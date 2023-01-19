@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %} Contrat {% endblock %}</title>
+
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href={{"/template/assets/favicon.ico"}} />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href={{"/assets/lib/animate/animate.min.css"}} rel="stylesheet">
+    <link href={{"/assets/lib/owlcarousel/assets/owl.carousel.min.css"}} rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href={{"/assets/css/bootstrap.min.css"}} rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href={{"/assets/css/style.css"}} rel="stylesheet">
+</head>
+
+<body>
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark text-light p-0">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>{{ app.user.adresse }} Dakar, SENEGAL</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>{{ app.user.tel }}</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center mx-n2">
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href="https://www.facebook.com/exauce.nsangou"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-square btn-link rounded-0 border-0 border-end border-secondary" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-link rounded-0" href="https://www.instagram.com/md_le_jeune_conscient/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href={{ path('accueil')}} class="navbar-brand d-flex align-items-center border-end px-4 px-lg-5">
+            <h2 class="m-0"><i class="fa fa-car text-primary me-2"></i>MD AUTO</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href={{ path('accueil')}} class="nav-item nav-link">Accueil</a>
+                <a href={{ path('voiture_list')}} class="nav-item nav-link">Voiture</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href={{ path('annonce_liste')}} class="dropdown-item">Annonce</a>
+                        <a href={{ path('contrat')}} class="dropdown-item">Contrat</a>
+                        <a href={{ path('demande_liste')}} class="dropdown-item">Demande</a>
+                        <a href={{ path('evenementiel')}} class="dropdown-item">Evenementiel</a>
+                        <a href={{ path('reservation_liste')}} class="dropdown-item">Reservation</a>
+                        <a href={{ path('role_liste')}} class="dropdown-item">Role</a>
+                        <a href={{ path('user_liste')}} class="dropdown-item">Utilisateur</a>
+                    </div>
+                </div>
+                <a href={{ path('info')}} class="nav-item nav-link">Qui sommes-nous ?</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
+            <form class="d-flex">
+                <button class="btn btn-white" type="text">
+                    <span class="badge bg-dark text-white ms-1 rounded-pill"><a class="nav-link" href={{ path('app_logout')}}>{{ app.user.prenom }} {{ app.user.nom }}</a></span>
+                </button>
+            </form>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <hr>
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+   
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'C:\xampp\htdocs\Mes_Projets_L3GL\Frameworks\Symfony\Gestion_Auto\src\Controller/AnnonceController.php'|file_link(0) }}">src/Controller/AnnonceController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'C:\xampp\htdocs\Mes_Projets_L3GL\Frameworks\Symfony\Gestion_Auto\templates\annonceindex.html.twig'|file_link(0) }}">templates/annonce/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{{ form_start(form) }}
+{# {{ form_widget(form) }} #}
+<div class="row">
+    <div class="col-md-6">
+    {{ form_row(
+        form.matricule
+    ) }}</div>
+    <div class="col-md-6">
+    {{ form_row(
+        form.modele
+    ) }}</div>
+    <div class="col-md-6">
+    {{ form_row(
+        form.marque
+    ) }}</div>
+    <div class="col-md-6">
+    {{ form_row(
+        form.typeVoiture
+    ) }}</div>
+    <div class="col-md-6">
+    {{ form_row(
+        form.photoVoiture
+    ) }}</div>
+    <div class="col-md-6">
+    {{ form_row(
+        form.prix
+    ) }}</div>
+</div>
+<br>
+<div>
+    {{ form_row(
+        form.users,{
+            'attr' : {
+                'class' : 'form-control'
+            }
+        }
+    ) }}
+</div>
+<br>
+{{ form_widget(form) }}
+<button class="btn btn-success align-content-center">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

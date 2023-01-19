@@ -1,0 +1,18 @@
+
+{{ form_start(form) }}
+
+ <div class="row">
+<div class="col-md-6"> {{ form_row(
+        form.typeAnnonce
+    ) }}</div>
+<div class="col-md-6"> {{ form_row(
+        form.prix
+    ) }}
+</div>
+   
+</div>
+
+{{ form_widget(form) }} 
+
+<button class="btn btn-success align-content-center">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

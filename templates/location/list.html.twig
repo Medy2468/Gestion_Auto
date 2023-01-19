@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %} Location {% endblock %}</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href={{"/template/assets/favicon.ico"}} />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href={{"/template/css/styles.css"}} rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-info">
+            <div class="container px-3 px-lg-7">
+                <a class="navbar-brand" href="#!">MD AUTO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href={{ path('accueil')}}>accueil</a></li>
+                        <li class="nav-item"><a class="nav-link" href={{ path('voiture_list')}}>voitures</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" id="navbarDropdown" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">services</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="nav-item"><a class="dropdown-item nav-link"  href={{ path('annonce_liste')}}>Annonce</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link"  href={{ path('contrat')}}>Contrat</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link"  href={{ path('evenementiel')}}>Evenementiel</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link" href={{ path('location')}}>Location voiture</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link"  href={{ path('reservation_liste')}}>Reservation</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link" href={{ path('role_liste')}}>Role</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link" href={{ path('user_liste')}}>Utilisateur</a></li>
+                                <li class="nav-item"><a class="dropdown-item nav-link"  href={{ path('vente')}}>Vente voiture</a></li>
+                            </ul>
+                            <li class="nav-item"><a class="nav-link" href={{ path('info')}}>Qui sommes-nous ?</a></li>
+                            <li class="nav-item"><a class="nav-link" href={{ path('contact')}}>contact</a></li>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <button class="btn btn-white" type="text">
+                            <span class="badge bg-dark text-white ms-1 rounded-pill"><a class="nav-link" href={{ path('app_logout')}}>{{ app.user.prenom }} {{ app.user.nom }}</a></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+
+    </body>
+</html>
